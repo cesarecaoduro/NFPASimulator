@@ -27,8 +27,8 @@
     <Grid>
         
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.05*"/>
-            <RowDefinition Height="0.05*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.1*"/>
             <RowDefinition/> 
             <RowDefinition Height="0.1*"/>
         </Grid.RowDefinitions>
@@ -79,7 +79,7 @@
                             <ColumnDefinition Width="0.6*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Name" Grid.Column="0" Margin="10, 0, 0, 0"/>
-                        <TextBox Grid.Column="1" x:Name="txtName" Margin="0, 0, 10, 0" Text="{Binding Path = name}"/>
+                        <ComboBox Grid.Column="1" x:Name="cmbName" Margin="0, 0, 10, 0"/>
                     </Grid>
                     <Grid Grid.Row="1" VerticalAlignment="Center">
                         <Grid.ColumnDefinitions>
