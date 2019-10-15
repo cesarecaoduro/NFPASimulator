@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>NFPA 130 Simulator</Name>
+    <Assembly>NFPASimulator.dll</Assembly>
+    <AddInId>fedc6fd3-89d7-413c-b774-75a3ace07732</AddInId>
+    <FullClassName>NFPASimulator.Application</FullClassName>
+    <VendorId>AECOM</VendorId>
+    <VendorDescription>AECOM, www.aecom.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

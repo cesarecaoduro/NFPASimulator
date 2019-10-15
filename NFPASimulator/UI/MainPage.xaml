@@ -1,0 +1,45 @@
+﻿<Page x:Class="NFPASimulator.UI.MainPage"
+             xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:dat="clr-namespace:System.Windows.Data;assembly=PresentationFramework"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+      
+      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+      xmlns:icons ="http://schemas.fontawesome.io/icons/"
+      
+        Title="Dockable Dialogs"  Height="500" Width="384.976"
+        x:Name="DockableDialogs"  Background="LightGray" >
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                 <!--MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive!--> 
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                 <!--Accent and AppTheme setting--> 
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition/> 
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+        
+        <TabControl x:Name="tabControls" Grid.Row="1">
+            <TabItem Header="Main"/>
+            <TabItem Header="Levels"/>
+            <TabItem Header="MeansOfEgress"/>
+            <TabItem Header="Parameters"/>
+        </TabControl>
+        <Button Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="btnRefresh">
+            <DockPanel>
+                <icons:ImageAwesome Icon="Refresh" Width="16" x:Name="icoRefresh"/>
+                <TextBlock Text="Refresh" Margin="10,0,0,0" FontSize="12" VerticalAlignment="Center"/>
+            </DockPanel>
+        </Button>
+    </Grid>
+</Page>
