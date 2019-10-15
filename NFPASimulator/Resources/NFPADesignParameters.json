@@ -1,0 +1,28 @@
+[
+  {
+    "Name": "NFPA2007",
+    "PlatformTravelSpeed": 37.8,
+    "ConcourseTravelSpeed": 61,
+    "SpeedElevation": 14.63,
+    "MultiLeafDoorsFlowCapacity": 89.3,
+    "BottleNeckFLowCapacity": 81.9,
+    "TurnstileFlowCapacity": 25,
+    "SingleLeafDoorsFlowCapacity": 0,
+    "GatesFlowCapacity": 50,
+    "StairsFlowCapacity": 55.5,
+    "EscalatorFlowCapacity": 55.5
+  },
+  {
+    "Name": "NFPA2010",
+    "PlatformTravelSpeed": 38,
+    "ConcourseTravelSpeed": 61,
+    "SpeedElevation": 15,
+    "MultiLeafDoorsFlowCapacity": 81.9,
+    "BottleNeckFLowCapacity": 81.9,
+    "TurnstileFlowCapacity": 25,
+    "SingleLeafDoorsFlowCapacity": 60,
+    "GatesFlowCapacity": 50,
+    "StairsFlowCapacity": 55.5,
+    "EscalatorFlowCapacity": 55.5
+  }
+]
