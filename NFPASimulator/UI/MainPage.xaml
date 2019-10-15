@@ -20,8 +20,10 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
             </ResourceDictionary.MergedDictionaries>
+  
         </ResourceDictionary>
     </Page.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*"/>
@@ -33,7 +35,53 @@
             <TabItem Header="Main"/>
             <TabItem Header="Levels"/>
             <TabItem Header="MeansOfEgress"/>
-            <TabItem Header="Parameters"/>
+            <TabItem Header="Parameters">
+                <Grid x:Name="grdDesignParameters">
+                    <!--<Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.4*"/>
+                        <ColumnDefinition Width="0.6*"/>
+                    </Grid.ColumnDefinitions>-->
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.4*"/>
+                            <ColumnDefinition Width="0.6*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Name" Grid.Column="0" Margin="10, 0, 0, 0"/>
+                        <TextBox Grid.Column="1" x:Name="txtName" Margin="0, 0, 10, 0" Text="{Binding Path = name}"/>
+                    </Grid>
+                    <Grid Grid.Row="1" VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.4*"/>
+                            <ColumnDefinition Width="0.6*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Platform Travel Speed" Grid.Column="0" Margin="10, 0, 0, 0"/>
+                        <TextBox Grid.Column="1" x:Name="txtPlatformTravelSpeed" Margin="0, 0, 10, 0" />
+                    </Grid>
+                    <Grid Grid.Row="2" VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.4*"/>
+                            <ColumnDefinition Width="0.6*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Concourse Travel Speed" Grid.Column="0" Margin="10, 0, 0, 0"/>
+                        <TextBox Grid.Column="1" x:Name="txtConcourseTravelSpeed" Margin="0, 0, 10, 0" />
+                    </Grid>
+                </Grid>
+
+            </TabItem>
         </TabControl>
         <Button Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="btnRefresh">
             <DockPanel>
@@ -43,3 +91,4 @@
         </Button>
     </Grid>
 </Page>
+

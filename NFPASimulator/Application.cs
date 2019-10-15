@@ -10,14 +10,15 @@ using System.Resources;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 
-using NFPASimulator.Utilities;
-using NFPASimulator.Properties;
-using NFPASimulator.UI;
+
 using Autodesk.Revit.UI.Events;
 using Autodesk.Revit.DB.Events;
 
 namespace NFPASimulator
 {
+    using NFPASimulator.Utilities;
+    using NFPASimulator.Properties;
+    using NFPASimulator.UI;
     /// <summary>
     /// 
     /// </summary>
