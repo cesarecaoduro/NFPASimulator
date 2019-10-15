@@ -17,7 +17,7 @@ namespace NFPASimulator.Models
         public double SpeedElevation { get; set; }
         public double BottleNeckFlowCapacity { get; set; }
         public double MultiLeafDoorsFlowCapacity { get; set; }
-        public int TurnstileFlowCapacity { get; set; }
+        public double TurnstileFlowCapacity { get; set; }
         public double SingleLeafDoorsFlowCapacity { get; set; }
         public double GatesFlowCapacity { get; set; }
         public double StairsFlowCapacity { get; set; }
