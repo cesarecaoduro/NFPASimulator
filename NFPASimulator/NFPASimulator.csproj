@@ -111,7 +111,7 @@
     <EmbeddedResource Include="Resources\NFPALogo.png" />
     <Content Include="Revit.NFPASimulator.bundle\PackageContents.xml" />
     <Content Include="Revit.NFPASimulator.bundle\Contents\NFPA130Simulator.addin" />
-    <None Include="Resources\NFPADesignParameters.json" />
+    <None Include="Revit.NFPASimulator.bundle\Contents\NFPADesignParameters.json" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="UI\MainPage.xaml">
