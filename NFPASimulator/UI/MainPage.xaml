@@ -181,6 +181,7 @@
                 </Grid>
 
             </TabItem>
+            <TabItem Header="Others"/>
         </TabControl>
         <Button Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="btnRefresh">
             <DockPanel>

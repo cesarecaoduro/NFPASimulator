@@ -2,14 +2,15 @@
 using System.Windows.Media.Imaging;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NFPASimulator.Models;
 using System.IO;
-using Newtonsoft.Json;
+
 
 namespace NFPASimulator.Utilities
 {
+    using Newtonsoft.Json;
+    using Autodesk.Revit.DB;
+    using NFPASimulator.Models;
+
     public class Utilities
     {
         internal static BitmapSource GetImage(IntPtr bm)
@@ -30,9 +31,17 @@ namespace NFPASimulator.Utilities
             {
                 var jsonData = file.ReadToEndAsync().Result;
                 designParameters = JsonConvert.DeserializeObject<DesignParametersModel[]>(jsonData);
-
             }
             return designParameters;
+        }
+
+        internal static List<ElementId> CollectElementsByCategory(Document doc, BuiltInCategory bic)
+        {
+            return new FilteredElementCollector(doc)
+                .OfCategory(bic)
+                .WhereElementIsNotElementType()
+                .ToElementIds()
+                .ToList();
         }
     }
 }

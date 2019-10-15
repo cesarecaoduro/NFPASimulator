@@ -1,18 +1,13 @@
 ﻿
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Autodesk.Revit.UI;
-using Autodesk.Revit.DB;
-using Autodesk.Revit.Attributes;
-using NFPASimulator.UI;
-using Autodesk.Revit.UI.Events;
+using System.Windows;
 
 namespace NFPASimulator.Commands
 {
+    using Autodesk.Revit.UI;
+    using Autodesk.Revit.DB;
+    using Autodesk.Revit.Attributes;
+
     /// <summary>
     /// Show dockable dialog
     /// </summary>
@@ -52,5 +47,25 @@ namespace NFPASimulator.Commands
 
             return Result.Succeeded;
         }
+
+    }
+
+    /// <summary>
+    /// Use this to test commands
+    /// </summary>
+    [Transaction(TransactionMode.ReadOnly)]
+    public class NFPASimulatorCommand : IExternalCommand
+    {
+        public Result Execute(
+          ExternalCommandData commandData,
+          ref string message,
+          ElementSet elements)
+        {
+            var specEq = Utilities.Utilities.CollectElementsByCategory(commandData.Application.ActiveUIDocument.Document, BuiltInCategory.OST_SpecialityEquipment);
+            MessageBox.Show(string.Format("Number of elements: {0}", specEq.Count));
+
+            return Result.Succeeded;
+        }
+
     }
 }
