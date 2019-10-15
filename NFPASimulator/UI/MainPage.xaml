@@ -9,7 +9,7 @@
       xmlns:icons ="http://schemas.fontawesome.io/icons/"
       
         Title="Dockable Dialogs"  Height="500" Width="384.976"
-        x:Name="DockableDialogs"  Background="LightGray" >
+        x:Name="DockableDialogs"  Background="White" >
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -25,13 +25,31 @@
     </Page.Resources>
 
     <Grid>
+        
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.05*"/>
+            <RowDefinition Height="0.05*"/>
             <RowDefinition/> 
             <RowDefinition Height="0.1*"/>
         </Grid.RowDefinitions>
-        
-        <TabControl x:Name="tabControls" Grid.Row="1">
+        <Menu HorizontalContentAlignment="Left">
+            <MenuItem Header="File">
+                <MenuItem Header="Text"/>
+            </MenuItem>
+            <MenuItem Header="?">
+                <MenuItem Header="About"/>
+            </MenuItem>
+        </Menu>
+        <controls:Tile Grid.Row="1" 
+                       Width="Auto" Height="Auto"
+                       Background="DeepSkyBlue"
+                       Title="[ProjectName]"
+                       x:Name="txtProjectName"
+                       FontSize="16"
+                        Foreground="Black"
+                        Margin="0">
+        </controls:Tile>
+        <TabControl x:Name="tabControls" Grid.Row="2">
             <TabItem Header="Main"/>
             <TabItem Header="Levels"/>
             <TabItem Header="MeansOfEgress"/>
@@ -83,7 +101,7 @@
 
             </TabItem>
         </TabControl>
-        <Button Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="btnRefresh">
+        <Button Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="btnRefresh">
             <DockPanel>
                 <icons:ImageAwesome Icon="Refresh" Width="16" x:Name="icoRefresh"/>
                 <TextBlock Text="Refresh" Margin="10,0,0,0" FontSize="12" VerticalAlignment="Center"/>
