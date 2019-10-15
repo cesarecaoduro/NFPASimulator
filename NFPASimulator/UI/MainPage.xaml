@@ -50,9 +50,26 @@
                         Margin="0">
         </controls:Tile>
         <TabControl x:Name="tabControls" Grid.Row="2">
-            <TabItem Header="Main"/>
-            <TabItem Header="Levels"/>
-            <TabItem Header="MeansOfEgress"/>
+            <TabItem Header="Main">
+                <StackPanel>
+                    <Expander Header="Data"></Expander>
+                    <Expander Header="Charts"></Expander>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Levels">
+                <StackPanel>
+                    <Expander Header="Data"></Expander>
+                    <Expander Header="Charts"></Expander>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="MeansOfEgress">
+                <StackPanel>
+                    <Expander Header="Stairs"></Expander>
+                    <Expander Header="Gates"></Expander>
+                    <Expander Header="Escalators"></Expander>
+                    <Expander Header="Bottlenecks"></Expander>
+                </StackPanel>
+            </TabItem>
             <TabItem Header="Parameters">
                 <Grid x:Name="grdDesignParameters">
                     <!--<Grid.ColumnDefinitions>
@@ -75,27 +92,91 @@
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0" VerticalAlignment="Center">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0.4*"/>
-                            <ColumnDefinition Width="0.6*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Name" Grid.Column="0" Margin="10, 0, 0, 0"/>
                         <ComboBox Grid.Column="1" x:Name="cmbName" Margin="0, 0, 10, 0"/>
                     </Grid>
                     <Grid Grid.Row="1" VerticalAlignment="Center">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0.4*"/>
-                            <ColumnDefinition Width="0.6*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Platform Travel Speed" Grid.Column="0" Margin="10, 0, 0, 0"/>
                         <TextBox Grid.Column="1" x:Name="txtPlatformTravelSpeed" Margin="0, 0, 10, 0" />
                     </Grid>
                     <Grid Grid.Row="2" VerticalAlignment="Center">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0.4*"/>
-                            <ColumnDefinition Width="0.6*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Concourse Travel Speed" Grid.Column="0" Margin="10, 0, 0, 0"/>
                         <TextBox Grid.Column="1" x:Name="txtConcourseTravelSpeed" Margin="0, 0, 10, 0" />
+                    </Grid>
+                    <Grid Grid.Row="3" VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Spped Elevation" Grid.Column="0" Margin="10, 0, 0, 0"/>
+                        <TextBox Grid.Column="1" x:Name="txtSpeedElevation" Margin="0, 0, 10, 0" />
+                    </Grid>
+                    <Grid Grid.Row="4" VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Multi Leaf Door Flow Capacity" Grid.Column="0" Margin="10, 0, 0, 0"/>
+                        <TextBox Grid.Column="1" x:Name="txtMultiLeafDoorsFlowCapacity" Margin="0, 0, 10, 0" />
+                    </Grid>
+                    <Grid Grid.Row="5" VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Bottleneck Flow Capacity" Grid.Column="0" Margin="10, 0, 0, 0"/>
+                        <TextBox Grid.Column="1" x:Name="txtBottleNeckFlowCapacity" Margin="0, 0, 10, 0" />
+                    </Grid>
+                    <Grid Grid.Row="6" VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Turnstile Flow Capacity" Grid.Column="0" Margin="10, 0, 0, 0"/>
+                        <TextBox Grid.Column="1" x:Name="txtTurnstileFlowCapacity" Margin="0, 0, 10, 0" />
+                    </Grid>
+                    <Grid Grid.Row="7" VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Single Leaf Doors Flow Capacity" Grid.Column="0" Margin="10, 0, 0, 0"/>
+                        <TextBox Grid.Column="1" x:Name="txtSingleLeafDoorsFlowCapacity" Margin="0, 0, 10, 0" />
+                    </Grid>
+                    <Grid Grid.Row="8" VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Gates Flow Capacity" Grid.Column="0" Margin="10, 0, 0, 0"/>
+                        <TextBox Grid.Column="1" x:Name="txtGatesFlowCapacity" Margin="0, 0, 10, 0" />
+                    </Grid>
+                    <Grid Grid.Row="9" VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Stairs Flow Capacity" Grid.Column="0" Margin="10, 0, 0, 0"/>
+                        <TextBox Grid.Column="1" x:Name="txtStairsFlowCapacity" Margin="0, 0, 10, 0" />
+                    </Grid>
+                    <Grid Grid.Row="10" VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Escalator Flow Capacity" Grid.Column="0" Margin="10, 0, 0, 0"/>
+                        <TextBox Grid.Column="1" x:Name="txtEscalatorFlowCapacity" Margin="0, 0, 10, 0" />
                     </Grid>
                 </Grid>
 
