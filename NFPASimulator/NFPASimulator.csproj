@@ -92,6 +92,7 @@
   <ItemGroup>
     <Compile Include="Application.cs" />
     <Compile Include="Commands\Command.cs" />
+    <Compile Include="Events\ApplicationEventHandlers.cs" />
     <Compile Include="Events\EventHandlers.cs" />
     <Compile Include="Models\DesignParametersModel.cs" />
     <Compile Include="Models\EscalatorModel.cs" />
@@ -146,7 +147,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>xcopy "$(ProjectDir)\Revit.NFPASimulator.bundle\Contents\*.*" "$(Appdata)\Autodesk\ApplicationPlugins\Revit.NFPASimulator.bundle\Contents\" /F /R /Y /I
+xcopy "$(ProjectDir)\Revit.NFPASimulator.bundle\*.xml" "$(Appdata)\Autodesk\ApplicationPlugins\Revit.NFPASimulator.bundle\" /F /R /Y /I
+xcopy "$(TargetDir)\*.*" "$(Appdata)\Autodesk\ApplicationPlugins\Revit.NFPASimulator.bundle\Contents\" /F /R /Y /I</PostBuildEvent>
   </PropertyGroup>
 </Project>

@@ -18,15 +18,22 @@ using Autodesk.Revit.UI;
 
 namespace NFPASimulator.UI
 {
+    using Autodesk.Revit.DB;
+    using NFPASimulator.Models;
+    using NFPASimulator.Utilities;
     /// <summary>
     /// Interaction logic for MainPage.xaml
     /// </summary>
+    
     public partial class MainPage : Page, IDockablePaneProvider
     {
 
+        private List<EscalatorViewModel> EscalatorsVM { get; set; }
+        public Document ActiveDocument { get; set; }
+
         public MainPage()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
         public void SetupDockablePane(DockablePaneProviderData data)

@@ -48,15 +48,12 @@ namespace NFPASimulator
 
             #region Register to events
             //application.ControlledApplication.DocumentChanged += (sender, e) => Events.EventHandlers.DocumentChanged(sender, e, mainWindow);
+            application.Idling += (sender, e) => Events.ApplicationEventHandlers.Idling(sender, e, mainWindow);
             #endregion
 
             return Result.Succeeded;
         }
 
-        void Application_ViewActivated(object sender, ViewActivatedEventArgs e)
-        {
-            //Do something
-        }
 
         private MainPage RegisterDockableWindow(UIControlledApplication application)
         {
@@ -80,7 +77,7 @@ namespace NFPASimulator
             DockablePaneId dpid = new DockablePaneId(new Guid("{4f3caa71-44fa-4329-9c9c-687956834eac}"));
 
             application.RegisterDockablePane(dpid, "NFPA 130 Simulator", MainDockableWindow as IDockablePaneProvider);
-            application.ViewActivated += new EventHandler<ViewActivatedEventArgs>(Application_ViewActivated);
+
 
             return MainDockableWindow;
             #endregion
