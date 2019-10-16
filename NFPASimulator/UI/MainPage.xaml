@@ -76,12 +76,16 @@
                             <Label Content="Under Development"/>
                         </StackPanel>
                     </Expander>
-                    <Expander Header="Escalators">
+                    <Expander Header="Escalators" MaxHeight="400">
                         <DataGrid x:Name="dgEscalators" 
                                   DataContext="{Binding EscalatorsVM}" 
                                   AutoGenerateColumns="False" 
                                   VerticalScrollBarVisibility="Auto" 
                                   HorizontalScrollBarVisibility="Auto"
+                                  CanUserReorderColumns="False"
+                                  CanUserResizeColumns="False"
+                                  AlternatingRowBackground="#FFCEEBFF"
+                                  SelectionMode="Single"
                                   >
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Family Name" Binding="{Binding FamilyType}"/>
