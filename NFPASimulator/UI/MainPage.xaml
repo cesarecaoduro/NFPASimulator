@@ -64,8 +64,18 @@
             </TabItem>
             <TabItem Header="MeansOfEgress">
                 <StackPanel>
-                    <Expander Header="Stairs"></Expander>
-                    <Expander Header="Gates"></Expander>
+                    <Expander Header="Stairs" >
+                        <StackPanel Orientation="Horizontal" Margin="10">
+                            <icons:ImageAwesome Icon="Lock" Width="16"/>
+                            <Label Content="Under Development"/>
+                        </StackPanel>
+                    </Expander>
+                    <Expander Header="Gates">
+                        <StackPanel Orientation="Horizontal" Margin="10">
+                            <icons:ImageAwesome Icon="Lock" Width="16"/>
+                            <Label Content="Under Development"/>
+                        </StackPanel>
+                    </Expander>
                     <Expander Header="Escalators">
                         <DataGrid x:Name="dgEscalators" DataContext="{Binding EscalatorsVM}" AutoGenerateColumns="False">
                             <DataGrid.Columns>
@@ -79,7 +89,12 @@
                         </DataGrid>
 
                     </Expander>
-                    <Expander Header="Bottlenecks"></Expander>
+                    <Expander Header="Bottlenecks">
+                        <StackPanel Orientation="Horizontal" Margin="10">
+                            <icons:ImageAwesome Icon="Lock" Width="16"/>
+                            <Label Content="Under Development"/>
+                        </StackPanel>
+                    </Expander>
                 </StackPanel>
             </TabItem>
             <TabItem Header="Parameters">
