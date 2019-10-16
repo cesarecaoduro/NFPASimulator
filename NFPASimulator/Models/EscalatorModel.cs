@@ -8,9 +8,9 @@ namespace NFPASimulator.Models
 {
     using Autodesk.Revit.DB;
 
-    class EscalatortModel
+    class EscalatorModel
     {
-        public FamilyType FamilyType { get; set; }
+        public ElementId FamilyInstance { get; set; }
         public Level TopLevel { get; set; }
         public Level BaseLevel { get; set; }
         public double ClearWidth { get; set; }

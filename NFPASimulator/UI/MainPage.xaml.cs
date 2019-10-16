@@ -29,6 +29,7 @@ namespace NFPASimulator.UI
     {
 
         private List<EscalatorViewModel> EscalatorsVM { get; set; }
+        private List<EscalatorModel> EscalatorsM { get; set; }
         public Document ActiveDocument { get; set; }
 
         public MainPage()
@@ -45,5 +46,41 @@ namespace NFPASimulator.UI
 
         }
 
+        private void btnRefresh_Click(object sender, RoutedEventArgs e)
+        {
+
+            EscalatorsVM = new List<EscalatorViewModel>();
+            EscalatorsM = new List<EscalatorModel>();
+            var specEqs = Utilities.CollectElementsByCategory(ActiveDocument, BuiltInCategory.OST_SpecialityEquipment);
+            foreach(var specEq in specEqs)
+            {
+                var el = ActiveDocument.GetElement(specEq);
+                try
+                {
+                    EscalatorModel esM = new EscalatorModel()
+                    {
+                        BaseLevel = ActiveDocument.GetElement(
+                        el.get_Parameter(BuiltInParameter.FAMILY_BASE_LEVEL_PARAM).AsElementId()
+                        ) as Level,
+                        TopLevel = ActiveDocument.GetElement(
+                        el.get_Parameter(BuiltInParameter.FAMILY_TOP_LEVEL_PARAM).AsElementId()
+                        ) as Level,
+                        FamilyInstance = el.Id,
+                        ClearWidth = 0,
+                        EscalatorFlowCapacity = 0,
+                        NumberOfPerson = 0
+                    };
+                    EscalatorsM.Add(esM);
+                    EscalatorsVM.Add(new EscalatorViewModel(ActiveDocument, esM));
+                }
+                catch(Exception ex)
+                {
+
+                }
+                
+            }
+
+            dgEscalators.ItemsSource = EscalatorsVM;
+        }
     }
 }

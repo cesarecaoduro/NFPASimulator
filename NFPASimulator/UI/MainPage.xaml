@@ -67,7 +67,17 @@
                     <Expander Header="Stairs"></Expander>
                     <Expander Header="Gates"></Expander>
                     <Expander Header="Escalators">
-                        <DataGrid x:Name="dgEscalators" ItemsSource="{Binding EscalatorsVM}"/>
+                        <DataGrid x:Name="dgEscalators" DataContext="{Binding EscalatorsVM}" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Family Name" Binding="{Binding FamilyType}"/>
+                                <DataGridTextColumn Header="Top Level" Binding="{Binding TopLevel}"/>
+                                <DataGridTextColumn Header="Base Level" Binding="{Binding BaseLevel}"/>
+                                <DataGridTextColumn Header="Clear Width" Binding="{Binding ClearWidth}"/>
+                                <DataGridTextColumn Header="Flow Capacity" Binding="{Binding EscalatorFlowCapacity}"/>
+                                <DataGridTextColumn Header="Number Person" Binding="{Binding NumberOfPerson}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+
                     </Expander>
                     <Expander Header="Bottlenecks"></Expander>
                 </StackPanel>
@@ -185,7 +195,7 @@
             </TabItem>
             <TabItem Header="Others"/>
         </TabControl>
-        <Button Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="btnRefresh">
+        <Button Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="btnRefresh" Click="btnRefresh_Click">
             <DockPanel>
                 <icons:ImageAwesome Icon="Refresh" Width="16" x:Name="icoRefresh"/>
                 <TextBlock Text="Refresh" Margin="10,0,0,0" FontSize="12" VerticalAlignment="Center"/>

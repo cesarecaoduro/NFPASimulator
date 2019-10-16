@@ -10,8 +10,14 @@ using System.Threading.Tasks;
 
 namespace NFPASimulator.Events
 {
-    public class EventHandlers
+    public class DocumentEventHandlers
     {
+        /// <summary>
+        /// Raised when the document has changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <param name="mainPage">Main Window</param>
         internal static void DocumentChanged(object sender, DocumentChangedEventArgs e, MainPage mainPage)
         {
             Document d = e.GetDocument();

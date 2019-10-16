@@ -11,36 +11,40 @@ namespace NFPASimulator.Models
 
     class EscalatorViewModel : INotifyPropertyChanged
     {
-        private EscalatorViewModel EscalatorVM;
+        private EscalatorModel EscalatorM;
+        private Document Doc;
 
-        public EscalatorViewModel(EscalatorViewModel eVM)
+        public EscalatorViewModel() { }
+
+        public EscalatorViewModel(Document doc, EscalatorModel eM)
         {
-            EscalatorVM = eVM;
+            EscalatorM = eM;
+            Doc = doc;
         }
 
-        public FamilyType FamilyType { 
-            get => EscalatorVM.FamilyType;
-            set => EscalatorVM.FamilyType = value;
+        public string FamilyType { 
+            get => Doc.GetElement(EscalatorM.FamilyInstance).get_Parameter(BuiltInParameter.ELEM_FAMILY_AND_TYPE_PARAM).AsValueString();
+            //set => EscalatorM.FamilyType = value;
         }
-        public Level TopLevel {
-            get => EscalatorVM.TopLevel;
-            set => EscalatorVM.TopLevel = value;
+        public string TopLevel {
+            get => EscalatorM.TopLevel.Name;
+            //set => EscalatorVM.TopLevel = value;
         }
-        public Level BaseLevel {
-            get => EscalatorVM.BaseLevel;
-            set => EscalatorVM.BaseLevel = value;
+        public string BaseLevel {
+            get => EscalatorM.BaseLevel.Name;
+            //set => EscalatorVM.BaseLevel = value;
         }
         public double ClearWidth {
-            get => EscalatorVM.ClearWidth;
-            set => EscalatorVM.ClearWidth = value;
+            get => EscalatorM.ClearWidth;
+            set => EscalatorM.ClearWidth = value;
         }
         public double EscalatorFlowCapacity {
-            get => EscalatorVM.EscalatorFlowCapacity;
-            set => EscalatorVM.EscalatorFlowCapacity = value;
+            get => EscalatorM.EscalatorFlowCapacity;
+            set => EscalatorM.EscalatorFlowCapacity = value;
         }
         public int NumberOfPerson {
-            get => EscalatorVM.NumberOfPerson;
-            set => EscalatorVM.NumberOfPerson = value;
+            get => EscalatorM.NumberOfPerson;
+            set => EscalatorM.NumberOfPerson = value;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

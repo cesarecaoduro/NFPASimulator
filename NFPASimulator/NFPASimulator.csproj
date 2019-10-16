@@ -93,7 +93,7 @@
     <Compile Include="Application.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Events\ApplicationEventHandlers.cs" />
-    <Compile Include="Events\EventHandlers.cs" />
+    <Compile Include="Events\DocumentEventHandlers.cs" />
     <Compile Include="Models\DesignParametersModel.cs" />
     <Compile Include="Models\EscalatorModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
