@@ -77,7 +77,12 @@
                         </StackPanel>
                     </Expander>
                     <Expander Header="Escalators">
-                        <DataGrid x:Name="dgEscalators" DataContext="{Binding EscalatorsVM}" AutoGenerateColumns="False">
+                        <DataGrid x:Name="dgEscalators" 
+                                  DataContext="{Binding EscalatorsVM}" 
+                                  AutoGenerateColumns="False" 
+                                  VerticalScrollBarVisibility="Auto" 
+                                  HorizontalScrollBarVisibility="Auto"
+                                  >
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Family Name" Binding="{Binding FamilyType}"/>
                                 <DataGridTextColumn Header="Top Level" Binding="{Binding TopLevel}"/>
