@@ -8,13 +8,13 @@ namespace NFPASimulator.Models
 {
     using Autodesk.Revit.DB;
 
-    class StairModel
+    class EscalatorModel
     {
         public ElementId FamilyInstance { get; set; }
         public Level TopLevel { get; set; }
         public Level BaseLevel { get; set; }
         public double ClearWidth { get; set; }
-        public double StairFlowCapacity { get; set; }
+        public double EscalatorFlowCapacity { get; set; }
         public int NumberOfPerson { get; set; }
     }
 }
