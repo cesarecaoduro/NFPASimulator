@@ -4,14 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:NFPASimulator.UI"
-             mc:Ignorable="d" 
+        xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+        mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
-        <WebBrowser Grid.Row="0" x:Name="webBrowser" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        
+        <!--<cefSharp:ChromiumWebBrowser Grid.Row="0" x:Name="webBrowser" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>-->
         <Button Grid.Row="1" Content="Close" x:Name="btnClose" Height="35" VerticalContentAlignment="Center"/>
     </Grid>
 </Window>

@@ -157,7 +157,7 @@ namespace NFPASimulator.UI
             AboutWindow = new AboutWindow();
             string dir = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             string path = string.Format(@"{0}\Docs\about.html", dir);
-            AboutWindow.webBrowser.Navigate(new Uri(path));
+            //AboutWindow.webBrowser.Address = path;
             AboutWindow.ShowDialog();
         }
     }
