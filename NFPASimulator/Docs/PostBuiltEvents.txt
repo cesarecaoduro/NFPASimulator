@@ -1,3 +1,5 @@
 ﻿xcopy "$(ProjectDir)\Revit.NFPASimulator.bundle\Contents\*.*" "$(Appdata)\Autodesk\ApplicationPlugins\Revit.NFPASimulator.bundle\Contents\" /F /R /Y /I
+xcopy "$(ProjectDir)\Revit.NFPASimulator.bundle\Contents\Docs\*.html" "$(Appdata)\Autodesk\ApplicationPlugins\Revit.NFPASimulator.bundle\Contents\Docs" /F /R /Y /I
 xcopy "$(ProjectDir)\Revit.NFPASimulator.bundle\*.xml" "$(Appdata)\Autodesk\ApplicationPlugins\Revit.NFPASimulator.bundle\" /F /R /Y /I
+
 xcopy "$(TargetDir)\*.*" "$(Appdata)\Autodesk\ApplicationPlugins\Revit.NFPASimulator.bundle\Contents\" /F /R /Y /I

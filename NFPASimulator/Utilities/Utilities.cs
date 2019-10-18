@@ -10,6 +10,7 @@ namespace NFPASimulator.Utilities
     using Newtonsoft.Json;
     using Autodesk.Revit.DB;
     using NFPASimulator.Models;
+    using System.Reflection;
 
     public class Utilities
     {
@@ -42,6 +43,12 @@ namespace NFPASimulator.Utilities
                 .WhereElementIsNotElementType()
                 .ToElementIds()
                 .ToList();
+        }
+
+        internal static string GetAbsolutePath(string path)
+        {
+            string dir = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            return string.Format(@"{0}{1}", dir,path);
         }
     }
 }

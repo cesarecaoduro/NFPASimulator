@@ -38,7 +38,7 @@
                 <MenuItem Header="Text"/>
             </MenuItem>
             <MenuItem Header="?">
-                <MenuItem Header="About"/>
+                <MenuItem Header="About" x:Name="mniAbout" Click="mniAbout_Click"/>
             </MenuItem>
         </Menu>
         <controls:Tile Grid.Row="1" 

@@ -36,6 +36,7 @@ namespace NFPASimulator.UI
         private List<EscalatorModel> EscalatorsM { get; set; }
         private DesignParametersModel[] DesignParameters { get; set; }
         public Document ActiveDocument { get; set; }
+        private AboutWindow AboutWindow = null;
 
         public MainPage()
         {
@@ -150,5 +151,14 @@ namespace NFPASimulator.UI
         }
 
         #endregion
+
+        private void mniAbout_Click(object sender, RoutedEventArgs e)
+        {
+            AboutWindow = new AboutWindow();
+            string dir = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string path = string.Format(@"{0}\Docs\about.html", dir);
+            AboutWindow.webBrowser.Navigate(new Uri(path));
+            AboutWindow.ShowDialog();
+        }
     }
 }

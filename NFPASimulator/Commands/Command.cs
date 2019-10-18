@@ -29,10 +29,10 @@ namespace NFPASimulator.Commands
     }
 
     /// <summary>
-    /// Hide dockable dialog
+    /// Hide dockable dialog - Not used
     /// </summary>
     [Transaction(TransactionMode.ReadOnly)]
-    public class HideDockableWindow : IExternalCommand
+    public class NFPASimulatorClose : IExternalCommand
     {
         public Result Execute(
           ExternalCommandData commandData,
