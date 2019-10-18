@@ -92,6 +92,7 @@
   <ItemGroup>
     <Compile Include="Application.cs" />
     <Compile Include="Commands\Command.cs" />
+    <Compile Include="Converters\SampleConverter.cs" />
     <Compile Include="Events\ApplicationEventHandlers.cs" />
     <Compile Include="Events\DocumentEventHandlers.cs" />
     <Compile Include="Models\DesignParametersModel.cs" />
@@ -139,6 +140,9 @@
     </PackageReference>
     <PackageReference Include="FontAwesome.WPF">
       <Version>4.7.0.9</Version>
+    </PackageReference>
+    <PackageReference Include="LiveCharts.Wpf">
+      <Version>0.9.7</Version>
     </PackageReference>
     <PackageReference Include="MahApps.Metro">
       <Version>2.0.0-alpha0531</Version>

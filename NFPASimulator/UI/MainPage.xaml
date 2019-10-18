@@ -7,6 +7,7 @@
       
       xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
       xmlns:icons ="http://schemas.fontawesome.io/icons/"
+      xmlns:chart="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
       
         Title="Dockable Dialogs"  Height="500" Width="384.976"
         x:Name="DockableDialogs"  Background="White" >
@@ -53,13 +54,19 @@
             <TabItem Header="Main">
                 <StackPanel>
                     <Expander Header="Data"></Expander>
-                    <Expander Header="Charts"></Expander>
+                    <Expander Header="Charts">
+                        
+                    </Expander>
                 </StackPanel>
             </TabItem>
             <TabItem Header="Levels">
                 <StackPanel>
                     <Expander Header="Data"></Expander>
-                    <Expander Header="Charts"></Expander>
+                    <Expander Header="Charts">
+                        <chart:CartesianChart x:Name="chtLevels">
+
+                        </chart:CartesianChart>
+                    </Expander>
                 </StackPanel>
             </TabItem>
             <TabItem Header="MeansOfEgress">

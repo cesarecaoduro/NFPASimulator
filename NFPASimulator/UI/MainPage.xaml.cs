@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using Autodesk.Revit.UI;
+using LiveCharts.Wpf;
 
 
 namespace NFPASimulator.UI
