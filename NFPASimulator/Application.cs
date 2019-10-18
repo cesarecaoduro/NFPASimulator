@@ -19,6 +19,8 @@ namespace NFPASimulator
     using NFPASimulator.Utilities;
     using NFPASimulator.Properties;
     using NFPASimulator.UI;
+    using System.Windows;
+
     /// <summary>
     /// 
     /// </summary>
@@ -47,7 +49,6 @@ namespace NFPASimulator
             MainPage mainWindow = RegisterDockableWindow(application);
 
             #region Register to events
-            //application.ControlledApplication.DocumentChanged += (sender, e) => Events.EventHandlers.DocumentChanged(sender, e, mainWindow);
             application.Idling += (sender, e) => Events.ApplicationEventHandlers.Idling(sender, e, mainWindow);
             #endregion
 
@@ -84,8 +85,17 @@ namespace NFPASimulator
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class AvailabilityNoOpenDocument : IExternalCommandAvailability
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
         public bool IsCommandAvailable(
           UIApplication a,
           CategorySet b)
