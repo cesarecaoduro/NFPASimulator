@@ -13,23 +13,23 @@
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                 <!--MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive!--> 
+                <!--MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive!-->
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
-                 <!--Accent and AppTheme setting--> 
+                <!--Accent and AppTheme setting-->
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
             </ResourceDictionary.MergedDictionaries>
-  
+
         </ResourceDictionary>
     </Page.Resources>
 
     <Grid>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*"/>
             <RowDefinition Height="0.1*"/>
-            <RowDefinition/> 
+            <RowDefinition/>
             <RowDefinition Height="0.1*"/>
         </Grid.RowDefinitions>
         <Menu HorizontalContentAlignment="Left">
@@ -132,7 +132,7 @@
                             <ColumnDefinition Width="0.5*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Name" Grid.Column="0" Margin="10, 0, 0, 0"/>
-                        <ComboBox Grid.Column="1" x:Name="cmbName" Margin="0, 0, 10, 0"/>
+                        <ComboBox Grid.Column="1" x:Name="cmbDesignParameterName" Margin="0, 0, 10, 0" SelectionChanged="cmbName_SelectionChanged"/>
                     </Grid>
                     <Grid Grid.Row="1" VerticalAlignment="Center">
                         <Grid.ColumnDefinitions>
@@ -140,7 +140,7 @@
                             <ColumnDefinition Width="0.5*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Platform Travel Speed" Grid.Column="0" Margin="10, 0, 0, 0"/>
-                        <TextBox Grid.Column="1" x:Name="txtPlatformTravelSpeed" Margin="0, 0, 10, 0" />
+                        <TextBox Grid.Column="1" x:Name="txtPlatformTravelSpeed" Margin="0, 0, 10, 0" IsReadOnly="True" Background="#FFCCCCCC"/>
                     </Grid>
                     <Grid Grid.Row="2" VerticalAlignment="Center">
                         <Grid.ColumnDefinitions>
@@ -148,7 +148,7 @@
                             <ColumnDefinition Width="0.5*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Concourse Travel Speed" Grid.Column="0" Margin="10, 0, 0, 0"/>
-                        <TextBox Grid.Column="1" x:Name="txtConcourseTravelSpeed" Margin="0, 0, 10, 0" />
+                        <TextBox Grid.Column="1" x:Name="txtConcourseTravelSpeed" Margin="0, 0, 10, 0" IsReadOnly="True" Background="#FFCCCCCC"/>
                     </Grid>
                     <Grid Grid.Row="3" VerticalAlignment="Center">
                         <Grid.ColumnDefinitions>
@@ -156,7 +156,7 @@
                             <ColumnDefinition Width="0.5*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Spped Elevation" Grid.Column="0" Margin="10, 0, 0, 0"/>
-                        <TextBox Grid.Column="1" x:Name="txtSpeedElevation" Margin="0, 0, 10, 0" />
+                        <TextBox Grid.Column="1" x:Name="txtSpeedElevation" Margin="0, 0, 10, 0" IsReadOnly="True" Background="#FFCCCCCC" />
                     </Grid>
                     <Grid Grid.Row="4" VerticalAlignment="Center">
                         <Grid.ColumnDefinitions>
@@ -164,7 +164,7 @@
                             <ColumnDefinition Width="0.5*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Multi Leaf Door Flow Capacity" Grid.Column="0" Margin="10, 0, 0, 0"/>
-                        <TextBox Grid.Column="1" x:Name="txtMultiLeafDoorsFlowCapacity" Margin="0, 0, 10, 0" />
+                        <TextBox Grid.Column="1" x:Name="txtMultiLeafDoorsFlowCapacity" Margin="0, 0, 10, 0" IsReadOnly="True" Background="#FFCCCCCC"/>
                     </Grid>
                     <Grid Grid.Row="5" VerticalAlignment="Center">
                         <Grid.ColumnDefinitions>
@@ -172,7 +172,7 @@
                             <ColumnDefinition Width="0.5*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Bottleneck Flow Capacity" Grid.Column="0" Margin="10, 0, 0, 0"/>
-                        <TextBox Grid.Column="1" x:Name="txtBottleNeckFlowCapacity" Margin="0, 0, 10, 0" />
+                        <TextBox Grid.Column="1" x:Name="txtBottleNeckFlowCapacity" Margin="0, 0, 10, 0" IsReadOnly="True" Background="#FFCCCCCC"/>
                     </Grid>
                     <Grid Grid.Row="6" VerticalAlignment="Center">
                         <Grid.ColumnDefinitions>
@@ -180,7 +180,7 @@
                             <ColumnDefinition Width="0.5*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Turnstile Flow Capacity" Grid.Column="0" Margin="10, 0, 0, 0"/>
-                        <TextBox Grid.Column="1" x:Name="txtTurnstileFlowCapacity" Margin="0, 0, 10, 0" />
+                        <TextBox Grid.Column="1" x:Name="txtTurnstileFlowCapacity" Margin="0, 0, 10, 0" IsReadOnly="True" Background="#FFCCCCCC"/>
                     </Grid>
                     <Grid Grid.Row="7" VerticalAlignment="Center">
                         <Grid.ColumnDefinitions>
@@ -188,7 +188,7 @@
                             <ColumnDefinition Width="0.5*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Single Leaf Doors Flow Capacity" Grid.Column="0" Margin="10, 0, 0, 0"/>
-                        <TextBox Grid.Column="1" x:Name="txtSingleLeafDoorsFlowCapacity" Margin="0, 0, 10, 0" />
+                        <TextBox Grid.Column="1" x:Name="txtSingleLeafDoorsFlowCapacity" Margin="0, 0, 10, 0" IsReadOnly="True" Background="#FFCCCCCC"/>
                     </Grid>
                     <Grid Grid.Row="8" VerticalAlignment="Center">
                         <Grid.ColumnDefinitions>
@@ -196,7 +196,7 @@
                             <ColumnDefinition Width="0.5*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Gates Flow Capacity" Grid.Column="0" Margin="10, 0, 0, 0"/>
-                        <TextBox Grid.Column="1" x:Name="txtGatesFlowCapacity" Margin="0, 0, 10, 0" />
+                        <TextBox Grid.Column="1" x:Name="txtGatesFlowCapacity" Margin="0, 0, 10, 0" IsReadOnly="True" Background="#FFCCCCCC"/>
                     </Grid>
                     <Grid Grid.Row="9" VerticalAlignment="Center">
                         <Grid.ColumnDefinitions>
@@ -204,7 +204,7 @@
                             <ColumnDefinition Width="0.5*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Stairs Flow Capacity" Grid.Column="0" Margin="10, 0, 0, 0"/>
-                        <TextBox Grid.Column="1" x:Name="txtStairsFlowCapacity" Margin="0, 0, 10, 0" />
+                        <TextBox Grid.Column="1" x:Name="txtStairsFlowCapacity" Margin="0, 0, 10, 0" IsReadOnly="True" Background="#FFCCCCCC"/>
                     </Grid>
                     <Grid Grid.Row="10" VerticalAlignment="Center">
                         <Grid.ColumnDefinitions>
@@ -212,7 +212,7 @@
                             <ColumnDefinition Width="0.5*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Escalator Flow Capacity" Grid.Column="0" Margin="10, 0, 0, 0"/>
-                        <TextBox Grid.Column="1" x:Name="txtEscalatorFlowCapacity" Margin="0, 0, 10, 0" />
+                        <TextBox Grid.Column="1" x:Name="txtEscalatorFlowCapacity" Margin="0, 0, 10, 0" IsReadOnly="True" Background="#FFCCCCCC"/>
                     </Grid>
                 </Grid>
 

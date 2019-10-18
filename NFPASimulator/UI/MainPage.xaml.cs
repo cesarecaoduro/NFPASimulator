@@ -21,21 +21,28 @@ namespace NFPASimulator.UI
     using Autodesk.Revit.DB;
     using NFPASimulator.Models;
     using NFPASimulator.Utilities;
+    using System.Reflection;
+    using ComboBox = System.Windows.Controls.ComboBox;
+
     /// <summary>
     /// Interaction logic for MainPage.xaml
     /// </summary>
-    
+
     public partial class MainPage : Page, IDockablePaneProvider
     {
 
         private List<EscalatorViewModel> EscalatorsVM { get; set; }
         private List<EscalatorModel> EscalatorsM { get; set; }
+        private DesignParametersModel[] DesignParameters { get; set; }
         public Document ActiveDocument { get; set; }
 
         public MainPage()
         {
-            InitializeComponent(); 
+            InitializeComponent();
+            InitializeDesignParameters();
         }
+
+        
 
         public void SetupDockablePane(DockablePaneProviderData data)
         {
@@ -45,6 +52,8 @@ namespace NFPASimulator.UI
             data.InitialState.TabBehind = Autodesk.Revit.UI.DockablePanes.BuiltInDockablePanes.ProjectBrowser;
 
         }
+
+        #region PRIVATE METHODS
 
         private void btnRefresh_Click(object sender, RoutedEventArgs e)
         {
@@ -82,5 +91,63 @@ namespace NFPASimulator.UI
 
             dgEscalators.ItemsSource = EscalatorsVM;
         }
+
+        private void cmbName_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                ComboBox cmb = sender as ComboBox;
+                int index = cmb.SelectedIndex;
+
+                txtPlatformTravelSpeed.Text = DesignParameters[index].PlatformTravelSpeed.ToString();
+                txtConcourseTravelSpeed.Text = DesignParameters[index].ConcourseTravelSpeed.ToString();
+                txtSpeedElevation.Text = DesignParameters[index].SpeedElevation.ToString();
+                txtMultiLeafDoorsFlowCapacity.Text = DesignParameters[index].MultiLeafDoorsFlowCapacity.ToString();
+                txtBottleNeckFlowCapacity.Text = DesignParameters[index].BottleNeckFlowCapacity.ToString();
+                txtTurnstileFlowCapacity.Text = DesignParameters[index].TurnstileFlowCapacity.ToString();
+                txtSingleLeafDoorsFlowCapacity.Text = DesignParameters[index].SingleLeafDoorsFlowCapacity.ToString();
+                txtGatesFlowCapacity.Text = DesignParameters[index].GatesFlowCapacity.ToString();
+                txtStairsFlowCapacity.Text = DesignParameters[index].StairsFlowCapacity.ToString();
+                txtEscalatorFlowCapacity.Text = DesignParameters[index].EscalatorFlowCapacity.ToString();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(string.Format("Error: {0}", ex.Message));
+            }
+
+        }
+
+        private void InitializeDesignParameters()
+        {
+            try
+            {
+                string dir = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                string path = string.Format(@"{0}\NFPADesignParameters.json", dir);
+                DesignParameters = Utilities.DesignParametersFromJSON(path);
+                foreach (var dp in DesignParameters)
+                {
+                    cmbDesignParameterName.Items.Add(dp.Name);
+                }
+                int index = 3;
+                cmbDesignParameterName.SelectedIndex = index;
+                txtPlatformTravelSpeed.Text = DesignParameters[index].PlatformTravelSpeed.ToString();
+                txtConcourseTravelSpeed.Text = DesignParameters[index].ConcourseTravelSpeed.ToString();
+                txtSpeedElevation.Text = DesignParameters[index].SpeedElevation.ToString();
+                txtMultiLeafDoorsFlowCapacity.Text = DesignParameters[index].MultiLeafDoorsFlowCapacity.ToString();
+                txtBottleNeckFlowCapacity.Text = DesignParameters[index].BottleNeckFlowCapacity.ToString();
+                txtTurnstileFlowCapacity.Text = DesignParameters[index].TurnstileFlowCapacity.ToString();
+                txtSingleLeafDoorsFlowCapacity.Text = DesignParameters[index].SingleLeafDoorsFlowCapacity.ToString();
+                txtGatesFlowCapacity.Text = DesignParameters[index].GatesFlowCapacity.ToString();
+                txtStairsFlowCapacity.Text = DesignParameters[index].StairsFlowCapacity.ToString();
+                txtEscalatorFlowCapacity.Text = DesignParameters[index].EscalatorFlowCapacity.ToString();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(string.Format("Error: {0}", ex.Message));
+            }
+            
+        }
+
+        #endregion
     }
 }
